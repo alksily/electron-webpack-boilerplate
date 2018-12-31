@@ -100,6 +100,8 @@ module.exports = {
         new webpack.ProvidePlugin({
             _: 'lodash',
         }),
-        new HtmlWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            template: path.join(dirAssets, 'index.ejs'),
+        }),
     ]
 };
