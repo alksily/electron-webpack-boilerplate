@@ -6,6 +6,12 @@ module.exports = merge(webpackConfig, {
     mode: 'development',
     devtool: 'eval',
     
+    output: {
+        pathinfo: true,
+        publicPath: '/',
+        filename: '[name].js'
+    },
+    
     devServer: {
         host: '0.0.0.0',
         stats: {
