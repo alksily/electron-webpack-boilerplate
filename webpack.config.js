@@ -8,7 +8,6 @@ const IS_DEV = (process.env.NODE_ENV === 'dev');
 const dirNode = 'node_modules';
 const dirApp = path.resolve(__dirname, 'src');
 const dirAssets = path.join(__dirname, 'assets');
-const dirOutput = path.resolve(__dirname, 'dist');
 
 module.exports = {
     entry: {
@@ -16,11 +15,6 @@ module.exports = {
             'lodash'
         ],
         bundle: path.join(dirApp, 'index')
-    },
-    output: {
-        path: dirOutput,
-        publicPath: '/',
-        filename: 'bundle.js'
     },
     resolve: {
         modules: [
@@ -106,8 +100,6 @@ module.exports = {
         new webpack.ProvidePlugin({
             _: 'lodash',
         }),
-        new HtmlWebpackPlugin({
-            template: path.join(dirAssets, 'index.ejs'),
-        }),
+        new HtmlWebpackPlugin(),
     ]
 };
