@@ -1,0 +1,58 @@
+{
+  "name": "electron-webpack-boilerplate",
+  "version": "1.0.0",
+  "description": "Minimal electron+webpack boilerplate",
+  "author": "Aleksey Ilyin",
+  "homepage": "https://github.com/alksily/electron-webpack-boilerplate",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alksily/electron-webpack-boilerplate.git"
+  },
+  "license": "MIT",
+  "main": "main.js",
+  "scripts": {
+    "prod": "webpack --mode production --config webpack.config.build.js && electron --noDevServer .",
+    "dev": "cross-env NODE_ENV=dev webpack-dev-server --progress --mode development --hot --host 0.0.0.0 --config=./webpack.config.dev.js",
+    "build": "webpack --mode production --config webpack.config.build.js",
+    "package": "webpack --mode production --config webpack.config.build.js",
+    "postpackage": "electron-packager ./ --out=./builds"
+  },
+  "dependencies": {
+    "lodash": "4.17.11",
+    "moment": "^2.22.2"
+  },
+  "devDependencies": {
+    "@babel/core": "7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-decorators": "^7.0.0",
+    "@babel/plugin-proposal-do-expressions": "^7.0.0",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+    "@babel/plugin-proposal-function-bind": "^7.0.0",
+    "@babel/plugin-proposal-function-sent": "^7.0.0",
+    "@babel/plugin-proposal-json-strings": "^7.0.0",
+    "@babel/plugin-proposal-logical-assignment-operators": "^7.0.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0",
+    "@babel/plugin-proposal-numeric-separator": "^7.0.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+    "@babel/plugin-proposal-pipeline-operator": "^7.0.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-syntax-import-meta": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-loader": "8.0.4",
+    "clean-webpack-plugin": "0.1.19",
+    "cross-env": "5.2.0",
+    "babili-webpack-plugin": "^0.1.2",
+    "css-loader": "^0.28.11",
+    "electron": "^4.0.0",
+    "electron-packager": "^13.0.1",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "3.2.0",
+    "style-loader": "^0.19.1",
+    "webpack": "4.20.2",
+    "webpack-cli": "3.1.2",
+    "webpack-dev-server": "^3.1.14",
+    "webpack-merge": "4.1.4"
+  }
+}
